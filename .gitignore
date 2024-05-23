@@ -1,0 +1,10 @@
+**venv*
+**.npy*
+**.h5*
+**.png
+**.ipynb*
+**.idea*
+**__pycache__*
+add_my_github.sh
+*git*.sh*
+*git*.txt*
