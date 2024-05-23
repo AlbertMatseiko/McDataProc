@@ -9,34 +9,34 @@ Keys1: ['norm_params', 'test', 'train', 'val']
 Keys2: ['log10Emu_mean', 'log10Emu_std', 'mean', 'std']
 ./h5_files/NE_23_05_24_baikal_multi_1223_filtered_flatspec_splitted.h5/
 | norm_params
-| | log10Emu_mean: 3.50231619
-| | log10Emu_std: 1.60590505
+| | log10Emu_mean: [shape: (1,), type: float64]
+| | log10Emu_std: [shape: (1,), type: float64]
 | | mean: [shape: (5,), type: float64]
 | | std: [shape: (5,), type: float64]
 | test
-| | channels: [shape: (3109532,), type: int32]
-| | data: [shape: (3109532, 5), type: float32]
+| | channels: [shape: (3161944,), type: int32]
+| | data: [shape: (3161944, 5), type: float32]
 | | ev_ids: [shape: (100000,), type: |S16]
 | | ev_starts: [shape: (100001,), type: int64]
-| | is_signal: [shape: (3109532,), type: int32]
+| | is_signal: [shape: (3161944,), type: int32]
 | | muons_prty
 | | | individ: [shape: (100000,), type: float32]
 | | prime_prty: [shape: (100000, 6), type: float32]
 | train
-| | channels: [shape: (47153703,), type: float32]
-| | data: [shape: (47153703, 5), type: float32]
+| | channels: [shape: (47128960,), type: float32]
+| | data: [shape: (47128960, 5), type: float32]
 | | ev_ids: [shape: (1500000,), type: |S16]
 | | ev_starts: [shape: (1500001,), type: int64]
-| | is_signal: [shape: (47153703,), type: float32]
+| | is_signal: [shape: (47128960,), type: float32]
 | | muons_prty
 | | | individ: [shape: (1500000,), type: float32]
 | | prime_prty: [shape: (1500000, 6), type: float32]
 | val
-| | channels: [shape: (21603701,), type: int32]
-| | data: [shape: (21603701, 5), type: float32]
+| | channels: [shape: (21576032,), type: int32]
+| | data: [shape: (21576032, 5), type: float32]
 | | ev_ids: [shape: (684854,), type: |S16]
 | | ev_starts: [shape: (684855,), type: int64]
-| | is_signal: [shape: (21603701,), type: int32]
+| | is_signal: [shape: (21576032,), type: int32]
 | | muons_prty
 | | | individ: [shape: (684854,), type: float32]
 | | prime_prty: [shape: (684854, 6), type: float32]

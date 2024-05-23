@@ -54,8 +54,8 @@ class H5Info:
             E = file[f'train/muons_prty/individ'][:]
             assert (E<0).sum()==0
             mean, std =  np.mean(np.log10(E), axis=0, dtype=np.float64), np.std(np.log10(E), axis=0, dtype=np.float64)
-            file.create_dataset('norm_params/log10Emu_mean', data = mean)
-            file.create_dataset('norm_params/log10Emu_std', data = std)
+            file.create_dataset('norm_params/log10Emu_mean', shape=(1,), data = mean)
+            file.create_dataset('norm_params/log10Emu_std', shape=(1,), data = std)
             file.close()
         except Exception as e:
            print(f"Doesn't work with this file. Maybe train-test-val splitting wasn't provided.\n{e=}")
