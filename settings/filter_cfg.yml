@@ -9,7 +9,7 @@ filters:
     strings: [2, *inf]
     Q: [0, *inf]
     E_prime: [0, *inf]
-    E_mu: [0, *inf]
+    E_mu: [1, *inf]
     make_flat_E: True
 
 hits_keys: ['channels', 'data', 'is_signal']

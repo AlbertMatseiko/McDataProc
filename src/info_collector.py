@@ -41,15 +41,21 @@ class H5Info:
     def add_norm_params(self):
         try:
             file = h5.File(self.path, 'a')
-            data = file['train/data'][:]
-            data = np.array(data, dtype=np.float64)
-            mean, std = data.mean(axis=0), data.std(axis=0)
             try:
                 del file['norm_params']
             except:
                 pass
-            file.create_dataset('norm_params/mean', data=mean, dtype=np.float32)
-            file.create_dataset('norm_params/std', data=std, dtype=np.float32)
+            # norm data
+            data = file['train/data'][:]
+            mean, std =  np.mean(data, axis=0, dtype=np.float64), np.std(data, axis=0, dtype=np.float64)
+            file.create_dataset('norm_params/mean', data=mean, dtype=np.float64)
+            file.create_dataset('norm_params/std', data=std, dtype=np.float64)
+            # norm lg energy
+            E = file[f'train/muons_prty/individ'][:]
+            assert (E<0).sum()==0
+            mean, std =  np.mean(np.log10(E), axis=0, dtype=np.float64), np.std(np.log10(E), axis=0, dtype=np.float64)
+            file.create_dataset('norm_params/log10Emu_mean', data = mean)
+            file.create_dataset('norm_params/log10Emu_std', data = std)
             file.close()
         except Exception as e:
            print(f"Doesn't work with this file. Maybe train-test-val splitting wasn't provided.\n{e=}")

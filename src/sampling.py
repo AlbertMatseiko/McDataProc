@@ -53,12 +53,18 @@ class Sampler:
         return np.array(nums_un_strings, dtype=np.int32)
 
     @staticmethod
-    def _idxs_flatten_spec(lgE: np.ndarray, bins=50) -> np.ndarray[int]:
+    def _idxs_flatten_spec(lgE: np.ndarray, start=None, stop=None, bins=None) -> np.ndarray[int]:
         '''
         idxs of events to make flat energy spectra
         '''
-        start, stop, bins = lgE.min(), lgE.max(), bins
+        if start is None:
+            start = 1
+        if stop is None:
+            stop = 6
+        if bins is None:
+            bins = 20
         e_range = np.linspace(start, stop, bins+1)
+        e_range = np.concatenate([[-10.], e_range, [10.]], axis=0)
         nums = []
         for bin_start, bin_stop in zip(e_range[:-1], e_range[1:]):
             nums.append(lgE[(lgE>bin_start) * (lgE<=bin_stop)].shape[0])
@@ -85,6 +91,8 @@ class Sampler:
         if self.filters['only_nu'] == True:
             ev_ids = self.file['ev_ids'][:]
             mask_events *= np.char.startswith(ev_ids, b'nu')
+            assert mask_events.sum()>0
+            logging.info("Particle=neutrino filter applied")
         if self.filters['E_prime'][0]>0 or self.filters['E_prime'][1]<10**9:
             E_prime = self.file['prime_prty'][:,2]
             mask_events *= (E_prime>=self.filters['E_prime'][0])*(E_prime<self.filters['E_prime'][1])
@@ -106,10 +114,13 @@ class Sampler:
             E = self.file['muons_prty/individ'][:][mask_events]
             E[E<=0] = 1e-3
             lgE = np.log10(E)
-            idxs_to_flat = self._idxs_flatten_spec(lgE, bins=50)
+            idxs_to_flat = self._idxs_flatten_spec(lgE, bins=20)
+            assert len(idxs_to_flat)>0
             idxs_events = np.where(mask_events)[0][idxs_to_flat]
+            assert len(idxs_events)>0
             mask_events = np.zeros(mask_events.shape[0], dtype=bool)
             mask_events[idxs_events] = True
+            assert mask_events.sum()>0
             logging.info("flat spectrum filter applied")
         mask_hits *= np.repeat(mask_events, np.diff(starts)) #self._update_mask_hits(mask_hits, mask_events, starts)
         logging.info("mask_hits updated")

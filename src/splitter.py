@@ -71,7 +71,9 @@ class SplitterNS:
         return new_starts
     
     def _idxs_from_ids(self, ev_ids):
+        # muons
         idxs_mu = np.where(np.char.startswith(ev_ids, b'mu'))[0]
+        idxs_mu = np.random.permutation(idxs_mu)
         idxs_mu_train = idxs_mu[:self.num_train_mu]
         idxs_mu_test = idxs_mu[self.num_train_mu:self.num_train_mu+self.num_test_mu]
         if self.num_val_mu is None:
@@ -79,17 +81,36 @@ class SplitterNS:
         else:
             idxs_mu_val = idxs_mu[self.num_train_mu+self.num_test_mu:self.num_train_mu+self.num_test_mu+self.num_val_mu]
         
-        idxs_nu = np.where(np.char.startswith(ev_ids, b'nu'))[0]
-        idxs_nu_train = idxs_nu[:self.num_train_nu]
-        idxs_nu_test = idxs_nu[self.num_train_nu:self.num_train_nu+self.num_test_nu]
-        if self.num_val_nu is None:
-            idxs_nu_val = idxs_nu[self.num_train_nu+self.num_test_nu:]
-        else:
-            idxs_nu_val = idxs_nu[self.num_train_nu+self.num_test_nu:self.num_train_nu+self.num_test_nu+self.num_val_nu]
+        # neutrino, saving proportion of nuatm/nu2
+        idxs_nuatm = np.where(np.char.startswith(ev_ids, b'nuatm'))[0]
+        idxs_nuatm = np.random.permutation(idxs_nuatm)
+        idxs_nu2 = np.where(np.char.startswith(ev_ids, b'nu2'))[0]
+        idxs_nu2 = np.random.permutation(idxs_nu2)
+        ratio = len(idxs_nuatm)/(len(idxs_nuatm)+len(idxs_nu2))
         
-        idxs_train = np.concatenate([idxs_mu_train, idxs_nu_train], axis=0)
-        idxs_test = np.concatenate([idxs_mu_test, idxs_nu_test], axis=0)
-        idxs_val = np.concatenate([idxs_mu_val, idxs_nu_val], axis=0)
+        self.num_train_nuatm = int(self.num_train_nu * ratio)
+        self.num_train_nu2 = self.num_train_nu - self.num_train_nuatm
+        
+        self.num_test_nuatm = int(self.num_test_nu * ratio)
+        self.num_test_nu2 = self.num_test_nu - self.num_test_nuatm
+        
+        idxs_nuatm_train = idxs_nuatm[:self.num_train_nuatm]
+        idxs_nuatm_test = idxs_nuatm[self.num_train_nuatm:self.num_train_nuatm+self.num_test_nuatm]
+        idxs_nu2_train = idxs_nu2[:self.num_train_nu2]
+        idxs_nu2_test = idxs_nu2[self.num_train_nu2:self.num_train_nu2+self.num_test_nu2]
+        
+        if self.num_val_nu is None:
+            idxs_nuatm_val = idxs_nuatm[self.num_train_nuatm+self.num_test_nuatm:]
+            idxs_nu2_val = idxs_nu2[self.num_train_nu2+self.num_test_nu2:]
+        else:
+            self.num_val_nuatm = int(self.num_val_nu * ratio)
+            self.num_val_nu2 = self.num_val_nu - self.num_val_nuatm
+            idxs_nuatm_val = idxs_nuatm[self.num_train_nuatm+self.num_test_nuatm:self.num_train_nuatm+self.num_test_nuatm+self.num_val_nuatm]
+            idxs_nu2_val = idxs_nu2[self.num_train_nu2+self.num_test_nu2:self.num_train_nu2+self.num_test_nu2+self.num_val_nu2]
+        
+        idxs_train = np.concatenate([idxs_mu_train, idxs_nuatm_train, idxs_nu2_train], axis=0)
+        idxs_test = np.concatenate([idxs_mu_test, idxs_nuatm_test, idxs_nu2_test], axis=0)
+        idxs_val = np.concatenate([idxs_mu_val, idxs_nuatm_val, idxs_nu2_val], axis=0)
         logging.info("idxs train-test-val collected")
         return idxs_train, idxs_test, idxs_val
     

@@ -1,5 +1,6 @@
-INFO:root:t0=datetime.datetime(2024, 5, 23, 14, 38, 14, 771034)
+INFO:root:t0=datetime.datetime(2024, 5, 23, 16, 6, 37, 579063)
 INFO:root:Signal filter applied
+INFO:root:E_prime filter applied
 INFO:root:Start _count_lens
 INFO:root:	len(lengths_list)=50109854
 INFO:root:hits filter applied
@@ -10,22 +11,22 @@ INFO:root:strings filter applied
 INFO:root:flat spectrum filter applied
 INFO:root:mask_hits updated
 INFO:root:Got masks for file: mask_events.shape=(50109854,), mask_hits.shape=(2398216020,)
-INFO:root:Got sample for h_key='channels'. sample.shape=(0,)
+INFO:root:Got sample for h_key='channels'. sample.shape=(71866936,)
 INFO:root:Dataset for h_key='channels' is created
-INFO:root:Got sample for h_key='data'. sample.shape=(0, 5)
+INFO:root:Got sample for h_key='data'. sample.shape=(71866936, 5)
 INFO:root:Dataset for h_key='data' is created
-INFO:root:Got sample for h_key='is_signal'. sample.shape=(0,)
+INFO:root:Got sample for h_key='is_signal'. sample.shape=(71866936,)
 INFO:root:Dataset for h_key='is_signal' is created
-INFO:root:Got sample for ev_key='cluster_ids'. sample.shape=(0,)
+INFO:root:Got sample for ev_key='cluster_ids'. sample.shape=(2284854,)
 INFO:root:Dataset for ev_key='cluster_ids' is created.
-INFO:root:Got sample for ev_key='ev_ids'. sample.shape=(0,)
+INFO:root:Got sample for ev_key='ev_ids'. sample.shape=(2284854,)
 INFO:root:Dataset for ev_key='ev_ids' is created.
-INFO:root:Got sample for ev_key='muons_prty/individ'. sample.shape=(0,)
+INFO:root:Got sample for ev_key='muons_prty/individ'. sample.shape=(2284854,)
 INFO:root:Dataset for ev_key='muons_prty/individ' is created.
-INFO:root:Got sample for ev_key='prime_prty'. sample.shape=(0, 6)
+INFO:root:Got sample for ev_key='prime_prty'. sample.shape=(2284854, 6)
 INFO:root:Dataset for ev_key='prime_prty' is created.
 INFO:root:Start _count_lens
 INFO:root:	len(lengths_list)=50109854
-INFO:root:Got sample for ev_key='ev_starts'. sample.shape=(1,)
+INFO:root:Got sample for ev_key='ev_starts'. sample.shape=(2284855,)
 INFO:root:Dataset for ev_key='ev_starts' is created.
-INFO:root:Passed time: 0:25:23.582419
+INFO:root:Passed time: 0:25:54.816296
