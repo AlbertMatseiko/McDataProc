@@ -1,0 +1,41 @@
+regime='train':
+muatm=5000000, nuatm=0, nu2=5000000
+regime='test':
+muatm=500000, nuatm=0, nu2=500000
+regime='val':
+muatm=18596608, nuatm=2970540, nu2=17542706
+Size is 64.97 GB
+Keys1: ['norm_params', 'test', 'train', 'val']
+Keys2: ['mean', 'std']
+./h5_files/NS_20_05_24_baikal_multi_1223_noise_splitted.h5/
+| norm_params
+| | mean: [shape: (5,), type: float32]
+| | std: [shape: (5,), type: float32]
+| test
+| | channels: [shape: (48550941,), type: int32]
+| | data: [shape: (48550941, 5), type: float32]
+| | ev_ids: [shape: (1000000,), type: |S16]
+| | ev_starts: [shape: (1000001,), type: int64]
+| | is_signal: [shape: (48550941,), type: int32]
+| | muons_prty
+| | | individ: [shape: (1000000,), type: float32]
+| | prime_prty: [shape: (1000000, 6), type: float32]
+| train
+| | channels: [shape: (485270210,), type: float32]
+| | data: [shape: (485270210, 5), type: float32]
+| | ev_ids: [shape: (10000000,), type: |S16]
+| | ev_starts: [shape: (10000001,), type: int64]
+| | is_signal: [shape: (485270210,), type: float32]
+| | muons_prty
+| | | individ: [shape: (10000000,), type: float32]
+| | prime_prty: [shape: (10000000, 6), type: float32]
+| val
+| | channels: [shape: (1864394869,), type: int32]
+| | data: [shape: (1864394869, 5), type: float32]
+| | ev_ids: [shape: (39109854,), type: |S16]
+| | ev_starts: [shape: (39109855,), type: int64]
+| | is_signal: [shape: (1864394869,), type: int32]
+| | muons_prty
+| | | individ: [shape: (39109854,), type: float32]
+| | prime_prty: [shape: (39109854, 6), type: float32]
+

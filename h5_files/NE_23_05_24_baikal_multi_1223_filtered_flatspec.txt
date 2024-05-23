@@ -1,0 +1,15 @@
+muatm=0, nuatm=0, nu2=0
+
+Size is 0.00 GB
+Keys1: ['channels', 'cluster_ids', 'data', 'ev_ids', 'ev_starts', 'is_signal', 'muons_prty', 'prime_prty']
+./h5_files/NE_23_05_24_baikal_multi_1223_filtered_flatspec.h5/
+| channels: [shape: (0,), type: int32]
+| cluster_ids: [shape: (0,), type: int32]
+| data: [shape: (0, 5), type: float32]
+| ev_ids: [shape: (0,), type: |S16]
+| ev_starts: [shape: (1,), type: int64]
+| is_signal: [shape: (0,), type: int32]
+| muons_prty
+| | individ: [shape: (0,), type: float32]
+| prime_prty: [shape: (0, 6), type: float32]
+

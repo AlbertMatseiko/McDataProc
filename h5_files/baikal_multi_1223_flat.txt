@@ -1,0 +1,51 @@
+Size is 15.51 GB
+Keys1: ['file_nums', 'norm_param', 'test', 'train', 'val']
+Keys2: ['test', 'train', 'val']
+../h5_files/baikal_multi_0523_flat_pureMC_h5s2_norm.h5/
+| file_nums
+| | test: [shape: (3,), type: int64]
+| | train: [shape: (3,), type: int64]
+| | val: [shape: (3,), type: int64]
+| norm_param
+| | mean: [shape: (5,), type: float32]
+| | std: [shape: (5,), type: float32]
+| test
+| | channels
+| | | data: [shape: (6714044,), type: int32]
+| | data
+| | | data: [shape: (6714044, 5), type: float32]
+| | ev_ids_corr
+| | | data: [shape: (465253,), type: |S13]
+| | ev_starts
+| | | data: [shape: (465254,), type: int64]
+| | labels
+| | | data: [shape: (6714044,), type: int32]
+| | t_res
+| | | data: [shape: (6714044,), type: float32]
+| train
+| | channels
+| | | data: [shape: (90805795,), type: int32]
+| | data
+| | | data: [shape: (90805795, 5), type: float32]
+| | ev_ids_corr
+| | | data: [shape: (5556146,), type: |S13]
+| | ev_starts
+| | | data: [shape: (5556147,), type: int64]
+| | labels
+| | | data: [shape: (90805795,), type: int32]
+| | t_res
+| | | data: [shape: (90805795,), type: float32]
+| val
+| | channels
+| | | data: [shape: (404139140,), type: int32]
+| | data
+| | | data: [shape: (404139140, 5), type: float32]
+| | ev_ids_corr
+| | | data: [shape: (22345821,), type: |S13]
+| | ev_starts
+| | | data: [shape: (22345822,), type: int64]
+| | labels
+| | | data: [shape: (404139140,), type: int32]
+| | t_res
+| | | data: [shape: (404139140,), type: float32]
+

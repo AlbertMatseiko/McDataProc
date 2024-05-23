@@ -1,0 +1,15 @@
+muatm=5783586, nuatm=253390, nu2=13697013
+
+Size is 12.77 GB
+Keys1: ['channels', 'cluster_ids', 'data', 'ev_ids', 'ev_starts', 'is_signal', 'muons_prty', 'prime_prty']
+./h5_files/baikal_multi_1223_filtered.h5/
+| channels: [shape: (450371448,), type: int32]
+| cluster_ids: [shape: (19733989,), type: int32]
+| data: [shape: (450371448, 5), type: float32]
+| ev_ids: [shape: (19733989,), type: |S16]
+| ev_starts: [shape: (19733990,), type: int64]
+| is_signal: [shape: (450371448,), type: int32]
+| muons_prty
+| | individ: [shape: (19733989,), type: float32]
+| prime_prty: [shape: (19733989, 6), type: float32]
+

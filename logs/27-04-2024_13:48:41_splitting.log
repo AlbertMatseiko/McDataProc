@@ -1,0 +1,52 @@
+INFO:root:t0=datetime.datetime(2024, 4, 27, 13, 48, 41, 82883)
+INFO:root:ev_ids collected
+INFO:root:idxs train-test-val collected
+INFO:root:ev_key='ev_ids'
+INFO:root:	got sample
+INFO:root:	train ev_key='ev_ids' written
+INFO:root:	test ev_key='ev_ids' written
+INFO:root:	val ev_key='ev_ids' written
+INFO:root:ev_key='ev_starts'
+INFO:root:	got sample
+INFO:root:		starts recalculated according to new indexes
+INFO:root:	train ev_starts written
+INFO:root:		starts recalculated according to new indexes
+INFO:root:	test ev_starts written
+INFO:root:		starts recalculated according to new indexes
+INFO:root:	val ev_starts written
+INFO:root:ev_key='muons_prty/individ'
+INFO:root:	got sample
+INFO:root:	train ev_key='muons_prty/individ' written
+INFO:root:	test ev_key='muons_prty/individ' written
+INFO:root:	val ev_key='muons_prty/individ' written
+INFO:root:ev_key='prime_prty'
+INFO:root:	got sample
+INFO:root:	train ev_key='prime_prty' written
+INFO:root:	test ev_key='prime_prty' written
+INFO:root:	val ev_key='prime_prty' written
+INFO:root:		idxs tranfromed into mask
+INFO:root:		idxs tranfromed into mask
+INFO:root:		idxs tranfromed into mask
+INFO:root:hits masks train-test-val collected
+INFO:root:h_key='channels'
+INFO:root:	got sample
+INFO:root:		starts recalculated according to new indexes
+INFO:root:		data sample shuffled
+INFO:root:	train h_key='channels' written
+INFO:root:	test h_key='channels' written
+INFO:root:	val h_key='channels' written
+INFO:root:h_key='data'
+INFO:root:	got sample
+INFO:root:		starts recalculated according to new indexes
+INFO:root:		data sample shuffled
+INFO:root:	train h_key='data' written
+INFO:root:	test h_key='data' written
+INFO:root:	val h_key='data' written
+INFO:root:h_key='is_signal'
+INFO:root:	got sample
+INFO:root:		starts recalculated according to new indexes
+INFO:root:		data sample shuffled
+INFO:root:	train h_key='is_signal' written
+INFO:root:	test h_key='is_signal' written
+INFO:root:	val h_key='is_signal' written
+INFO:root:Passed time: 0:01:25.513374

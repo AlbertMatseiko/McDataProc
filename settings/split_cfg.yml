@@ -1,0 +1,22 @@
+path_to_h5: ./h5_files/baikal_multi_1223_noparts.h5
+path_to_out: ./h5_files/NS_20_05_24_baikal_multi_1223_noise_splitted.h5
+
+num_train_mu: 5000000
+num_test_mu: 500000
+# if null, then all the remaining particles are to be written into val
+num_val_mu: null #5000000
+
+num_train_nu: 5000000
+num_test_nu: 500000
+# if null, then all the remaining particles are to be written into val
+num_val_nu: null #5000000
+
+hits_keys:
+  - channels
+  - data
+  - is_signal
+events_keys:
+  - ev_ids
+  - ev_starts
+  - muons_prty/individ
+  - prime_prty

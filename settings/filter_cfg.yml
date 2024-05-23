@@ -1,0 +1,16 @@
+path_to_h5: ./h5_files/baikal_multi_1223_noparts.h5
+path_to_out: ./h5_files/NE_23_05_24_baikal_multi_1223_filtered_flatspec.h5
+
+define: &inf 100000000000
+filters:
+    only_nu: True
+    hits: [5, *inf]
+    only_signal: True
+    strings: [2, *inf]
+    Q: [0, *inf]
+    E_prime: [0, *inf]
+    E_mu: [0, *inf]
+    make_flat_E: True
+
+hits_keys: ['channels', 'data', 'is_signal']
+events_keys: ['cluster_ids', 'ev_ids', 'muons_prty/individ', 'prime_prty', 'ev_starts']
